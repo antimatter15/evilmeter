@@ -1,0 +1,27 @@
+{
+  "name" : "Evil Meter",
+  "version" : "1.0",
+  "description" : "Detects if a webapp is evil and uses User Agent detection.",
+  "background_page" : "background.html",
+  "page_action" :
+  {
+    "default_icon" : "cry.gif",
+    "default_title" : "The website uses User Agent detection!"
+  },
+  "content_scripts" : [
+    {
+      "matches" : [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js" : ["checkevil.js"],
+      "run_at" : "document_start",
+      "all_frames" : false
+    }
+  ],
+  "icons" : {
+    "48" : "evil48.png",
+    "128" : "evil128.png"
+  }
+}
+
